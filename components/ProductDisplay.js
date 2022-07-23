@@ -42,6 +42,8 @@ app.component('product-display', {
           </button>
           <button class="button" @click="removeFromCart">Remove from cart</button>
         </div>
+        <review-list v-if="reviews.length" :reviews="reviews"></review-list>
+        <review-form @review-submitted="addReview"></review-form>
       </div>`,
     data() {
         return {
@@ -62,7 +64,8 @@ app.component('product-display', {
                     quantity: 0
                 }
             ],
-            onSale: true
+            onSale: true,
+            reviews: []
         }
     },
     methods: {
@@ -71,6 +74,9 @@ app.component('product-display', {
         },
         updateVariant(index) {
             this.selectedVariant = index
+        },
+        addReview(review) {
+            this.reviews.push(review)
         }
     },
     computed: {
