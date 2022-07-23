@@ -17,7 +17,8 @@ const app = Vue.createApp({
                 {id: 3, name: 'M'},
                 {id: 4, name: 'L'},
                 {id: 5, name: 'XL'},
-            ]
+            ],
+            inStock: false
 
         }
     },
